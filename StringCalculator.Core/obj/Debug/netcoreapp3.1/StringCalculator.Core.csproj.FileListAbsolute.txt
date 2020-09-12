@@ -1,0 +1,9 @@
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\obj\Debug\netcoreapp3.1\StringCalculator.Core.csproj.CoreCompileInputs.cache
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\obj\Debug\netcoreapp3.1\StringCalculator.Core.AssemblyInfoInputs.cache
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\obj\Debug\netcoreapp3.1\StringCalculator.Core.AssemblyInfo.cs
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\bin\Debug\netcoreapp3.1\StringCalculator.Core.deps.json
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\bin\Debug\netcoreapp3.1\StringCalculator.Core.dll
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\bin\Debug\netcoreapp3.1\StringCalculator.Core.pdb
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\obj\Debug\netcoreapp3.1\StringCalculator.Core.dll
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\obj\Debug\netcoreapp3.1\StringCalculator.Core.pdb
+D:\Dev\DotNet\StringCalculator\StringCalculator.Core\obj\Debug\netcoreapp3.1\StringCalculator.Core.csprojAssemblyReference.cache
