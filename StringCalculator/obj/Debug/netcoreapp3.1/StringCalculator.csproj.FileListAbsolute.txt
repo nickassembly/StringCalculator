@@ -10,3 +10,4 @@ D:\Dev\DotNet\StringCalculator\StringCalculator\obj\Debug\netcoreapp3.1\StringCa
 D:\Dev\DotNet\StringCalculator\StringCalculator\obj\Debug\netcoreapp3.1\StringCalculator.dll
 D:\Dev\DotNet\StringCalculator\StringCalculator\obj\Debug\netcoreapp3.1\StringCalculator.pdb
 D:\Dev\DotNet\StringCalculator\StringCalculator\obj\Debug\netcoreapp3.1\StringCalculator.genruntimeconfig.cache
+D:\Dev\DotNet\StringCalculator\StringCalculator\obj\Debug\netcoreapp3.1\StringCalculator.csprojAssemblyReference.cache

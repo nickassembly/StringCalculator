@@ -6,7 +6,17 @@ namespace StringCalculator.Core
    {
       public static int Add(string numbers)
       {
-         return 0;
+         string[] strings = numbers.Split(",");
+         int sum = 0;
+         foreach (var s in strings)
+         {
+            if (int.TryParse(s, out int number))
+            {
+               sum += number;
+            }
+         }
+
+         return sum;
       }
    }
 }
