@@ -41,7 +41,17 @@ namespace StringCalculator.Test
 
       [Theory]
       [InlineData(36, "11\n2,23")]
+      [InlineData(46, "22\n2\n22")]
       public void ReturnSumOfNumbers_GivenNewLineSeparators(int expected, string input)
+      {
+         int result = Calculator.Add(input);
+
+         Assert.Equal(expected, result);
+      }
+
+      [Theory]
+      [InlineData(3, "//;\n1;2")]
+      public void ReturnSumOfNumbers_GivenCustomDelimitedNumbers(int expected, string input)
       {
          int result = Calculator.Add(input);
 

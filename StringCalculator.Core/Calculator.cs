@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace StringCalculator.Core
 {
@@ -6,7 +7,9 @@ namespace StringCalculator.Core
    {
       public static int Add(string numbers)
       {
-         string[] strings = numbers.Split(",");
+         string customDelimiter = GetDelimiter(numbers);
+
+         string[] strings = numbers.Split(',', '\n');
          int sum = 0;
          foreach (var s in strings)
          {
@@ -17,6 +20,11 @@ namespace StringCalculator.Core
          }
 
          return sum;
+      }
+
+      private static string GetDelimiter(Span<char> numbers)
+      {
+         throw new NotImplementedException();
       }
    }
 }
