@@ -58,6 +58,16 @@ namespace StringCalculator.Test
          Assert.Equal(expected, result);
       }
 
+      [Fact]
+      public void ThrowException_GivenNegativeNumbers()
+      {
+         void TestCode() => Calculator.Add("-1");
+         var exception = Assert.Throws<NegativesNotAllowedException>((Action)TestCode);
+
+         Assert.Contains("-1", exception.Message);
+
+      }
+
 
    }
 }
