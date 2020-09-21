@@ -20,7 +20,18 @@ namespace StringCalculator.Core
             }
          }
 
+         CheckForNegativeNumbers(numberList);
          return numberList.Sum();
+      }
+
+      private static void CheckForNegativeNumbers(List<int> numberList)
+      {
+         var negativeNumbers = numberList.Where(x => x < 0).ToList();
+         
+         if (negativeNumbers.Any())
+         {
+            throw new NegativesNotAllowedException();
+         }
       }
 
       private static char[] GetDelimiters(string numbers)
