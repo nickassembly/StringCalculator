@@ -61,11 +61,23 @@ namespace StringCalculator.Test
       [Fact]
       public void ThrowException_GivenNegativeNumbers()
       {
-         void TestCode() => Calculator.Add("-1");
+         void TestCode() => Calculator.Add("-1, -4, 7");
          var exception = Assert.Throws<NegativesNotAllowedException>((Action)TestCode);
 
          Assert.Contains("-1", exception.Message);
+         Assert.Contains("-4", exception.Message);
+         Assert.DoesNotContain("7", exception.Message);
+      }
 
+      [Theory]
+      [InlineData(5, "5, 1001")]
+      [InlineData(4, "1002, 4")]
+      [InlineData(3, "1003, 3, 1004")]
+      public void IgnoreNumbersAbove1000(int expected, string input)
+      {
+         int result = Calculator.Add(input);
+
+         Assert.Equal(expected, result);
       }
 
 

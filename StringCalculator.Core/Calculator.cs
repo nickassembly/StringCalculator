@@ -20,8 +20,14 @@ namespace StringCalculator.Core
             }
          }
 
+         RemoveLargeNumbers(numberList);
          CheckForNegativeNumbers(numberList);
          return numberList.Sum();
+      }
+
+      private static void RemoveLargeNumbers(List<int> numberList)
+      {
+         numberList.RemoveAll();
       }
 
       private static void CheckForNegativeNumbers(List<int> numberList)
@@ -30,7 +36,7 @@ namespace StringCalculator.Core
          
          if (negativeNumbers.Any())
          {
-            throw new NegativesNotAllowedException();
+            throw new NegativesNotAllowedException(negativeNumbers);
          }
       }
 
