@@ -80,6 +80,24 @@ namespace StringCalculator.Test
          Assert.Equal(expected, result);
       }
 
+      [Theory]
+      [InlineData(1005, "5, 1000")]
+      [InlineData(1003, "3, 1000")]
+      public void SumNumbersCorrectly_GivenNumbersUpTo1000(int expected, string input)
+      {
+         int result = Calculator.Add(input);
+
+         Assert.Equal(expected, result);
+      }
+
+      [Theory]
+      [InlineData(6, "//[|||]\n1|||2|||3")]
+      public void AllowMulticharacterDelimiters_GivenSquareBraces(int expected, string input)
+      {
+         int result = Calculator.Add(input);
+
+         Assert.Equal(expected, result);
+      }
 
    }
 }

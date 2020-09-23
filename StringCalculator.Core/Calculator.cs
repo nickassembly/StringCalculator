@@ -9,8 +9,8 @@ namespace StringCalculator.Core
    {
       public static int Add(string numbers)
       {
-         char[] delimiters = GetDelimiters(numbers);
-         string[] strings = numbers.Split(delimiters);
+         string[] delimiters = GetDelimiters(numbers);
+         string[] strings = numbers.Split(delimiters, StringSplitOptions.None);
          List<int> numberList = new List<int>();
          foreach (var s in strings)
          {
@@ -20,34 +20,35 @@ namespace StringCalculator.Core
             }
          }
 
-         RemoveLargeNumbers(numberList);
          CheckForNegativeNumbers(numberList);
+         numberList.RemoveAll(x => x > 1000);
          return numberList.Sum();
-      }
-
-      private static void RemoveLargeNumbers(List<int> numberList)
-      {
-         numberList.RemoveAll();
       }
 
       private static void CheckForNegativeNumbers(List<int> numberList)
       {
          var negativeNumbers = numberList.Where(x => x < 0).ToList();
-         
+
          if (negativeNumbers.Any())
          {
             throw new NegativesNotAllowedException(negativeNumbers);
          }
       }
 
-      private static char[] GetDelimiters(string numbers)
+      private static string[] GetDelimiters(string numbers)
       {
-         var delimiters = new List<char> { ',', '\n' };
+         var delimiters = new List<string> { ",", "\n" };
          if (numbers.StartsWith("//"))
          {
-            string delimiterDeclaration = numbers.Split('\n').First();
-            char delimiter = delimiterDeclaration.Substring(2, 1).Single();
-            delimiters.Add(delimiter);
+            string customDelim = numbers.Split('\n').First().Substring(2);
+            if (customDelim.StartsWith('['))
+            {
+               delimiters.Add(customDelim.Substring(1, customDelim.Length - 2));
+            }
+            else
+            {
+               delimiters.Add(customDelim);
+            }
          }
 
          return delimiters.ToArray();
